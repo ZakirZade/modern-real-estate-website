@@ -1,0 +1,81 @@
+// Standart Buttons
+.btn-primary {
+  padding: 15px 20px;
+  background-color: transparent;
+  @include font-style(
+    $absolute-white,
+    clamp(0.875rem, 0.819rem + 0.25vw, 1.125rem),
+    $f-medium,
+    150%
+  );
+  @include border(1px solid $grey-15, 10px);
+  cursor: pointer;
+  transition: background-color 0.2s linear, border 0.2s linear;
+
+  &:hover {
+    background-color: $grey-15;
+    border: 1px solid $grey-15;
+  }
+}
+
+.btn-primary-mini {
+  @media screen and (max-width: 385px) {
+    padding: 15px;
+  }
+}
+
+.btn-secondary {
+  padding: 15px 20px;
+  background-color: $purple-60;
+  @include font-style(
+    $absolute-white,
+    clamp(0.875rem, 0.819rem + 0.25vw, 1.125rem),
+    $f-medium,
+    150%
+  );
+  @include border(1px solid transparent, 10px);
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: $purple-70;
+  }
+}
+
+// Contact US
+.contact-us {
+  padding: 15px 25px;
+  background-color: transparent;
+  @include border(1px solid transparent, 10px);
+  @include font-style(
+    $absolute-white,
+    clamp(0.75rem, 0.194rem + 1.03vw, 1.125rem),
+    $f-medium,
+    150%
+  );
+  cursor: pointer;
+  transition: background-color 0.2s linear, border 0.2s linear;
+
+  &:hover {
+    background-color: $grey-08;
+    border: 1px solid $grey-15;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+// Read-More
+.read-more-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  @include font-style(
+    $absolute-white,
+    clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+    $f-medium,
+    150%
+  );
+  text-decoration: underline;
+}

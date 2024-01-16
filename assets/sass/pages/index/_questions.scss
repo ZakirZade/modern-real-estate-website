@@ -1,0 +1,60 @@
+// FAQ BLOCK
+.questions {
+  margin-top: 120px;
+}
+
+.questions-content {
+  position: relative;
+}
+
+// Questions Block
+.questions-block {
+  @include grid(repeat(3, 1fr), $g-gap: 20px);
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Questions Block -> Questions Block Object
+.q-b-obj {
+  @include flex-column(25px);
+  @include border(1px solid $grey-15, 12px);
+  background: $grey-08;
+  padding: 40px;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 900px) {
+    padding: 30px;
+  }
+
+  h4 {
+    @include font-style(
+      $absolute-white,
+      clamp(1.125rem, 1.038rem + 0.38vw, 1.5rem),
+      $f-semibold,
+      150%
+    );
+  }
+
+  p {
+    @include font-style(
+      $grey-60,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+  }
+
+  .question-btn {
+    background-color: $grey-10;
+    border: 1px solid $grey-15;
+    width: fit-content;
+    margin-top: auto;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      background-color: $grey-15;
+    }
+  }
+}

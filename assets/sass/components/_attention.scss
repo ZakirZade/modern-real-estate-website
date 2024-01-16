@@ -1,0 +1,85 @@
+// HEADER BLOCK -> ATTENTION
+.attention {
+  position: relative;
+  padding: 15px 0;
+}
+
+.attention-content {
+  @include flex-center(10px);
+
+  @media screen and (max-width: 500px) {
+    @include flex(row, center, space-between, 5px);
+  }
+
+  h1 {
+    @include font-style(
+      $absolute-white,
+      clamp(0.7rem, 0.527rem + 0.48vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+  }
+
+  a {
+    transition: text-decoration 0.3s ease-in-out;
+
+    @include font-style(
+      $absolute-white,
+      clamp(0.7rem, 0.527rem + 0.48vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+
+    &::after {
+      content: "";
+      width: 0px;
+      height: 0.5px;
+      display: block;
+      background: $absolute-white;
+      transition: 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+// Attention Background Image
+.attention-bg {
+  background-color: $grey-15;
+  position: absolute;
+  @include symmetry(100%);
+  top: 0;
+  z-index: -1;
+  opacity: 0.25;
+
+  img {
+    @include symmetry(100%);
+    object-fit: cover;
+  }
+}
+
+// Cross Attention
+.attention-btn {
+  @include flex-center;
+  @include symmetry(25px);
+  background-color: rgba($absolute-white, 0.1);
+  @include border(none, 50%);
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+
+  @media screen and (min-width: 500px) and (max-width: 1600px) {
+    position: absolute;
+    right: 20px;
+  }
+
+  &:hover {
+    background-color: rgba($absolute-white, 0.5);
+  }
+
+  img {
+    @include symmetry(75%);
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,90 @@
+// Font Mixin
+@mixin font-style($t-c, $f-sz, $f-w, $l-h: 0, $l-s: 0, $f-f: $font-main) {
+  color: $t-c;
+  font-size: $f-sz;
+  font-weight: $f-w;
+  line-height: $l-h;
+  letter-spacing: $l-s;
+  font-family: $f-f;
+}
+
+// Border Mixin
+@mixin border($border, $border-r) {
+  border: $border;
+  border-radius: $border-r;
+}
+
+// Flex Mixins
+@mixin flex($f-d, $a-items, $j-c, $f-gap: 0) {
+  display: flex;
+  flex-direction: $f-d;
+  align-items: $a-items;
+  justify-content: $j-c;
+  gap: $f-gap;
+}
+
+@mixin flex-center($f-gap: 0) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $f-gap;
+}
+
+@mixin flex-column($f-gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $f-gap;
+}
+
+@mixin flex-gap($f-gap: 0) {
+  display: flex;
+  gap: $f-gap;
+}
+
+// Grid Mixins
+@mixin grid(
+  $grid-t-c: unset,
+  $grid-t-r: unset,
+  $g-gap: 0,
+  $j-c: unset,
+  $a-items: normal
+) {
+  display: grid;
+  grid-template-columns: $grid-t-c;
+  grid-template-rows: $grid-t-r;
+  gap: $g-gap;
+  justify-content: $j-c;
+  align-items: $a-items;
+}
+
+@mixin grid-auto-column($j-c: unset, $a-items: normal, $g-gap: 0) {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: $j-c;
+  align-items: $a-items;
+  gap: $g-gap;
+}
+
+@mixin grid-auto-row($j-c: unset, $a-items: normal, $g-gap: 0) {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: $j-c;
+  align-items: $a-items;
+  gap: $g-gap;
+}
+
+@mixin grid-gap($g-gap) {
+  display: grid;
+  gap: $g-gap;
+}
+
+// Width & Height Mixin
+@mixin w-h($width: 10px, $height: 10px) {
+  width: $width;
+  height: $height;
+}
+
+@mixin symmetry($symmetry) {
+  width: $symmetry;
+  height: $symmetry;
+}

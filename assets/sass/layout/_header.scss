@@ -1,0 +1,56 @@
+.header {
+  background-color: $grey-10;
+  position: relative;
+  padding: 25px 0;
+  border-top: 1px solid $grey-15;
+  border-bottom: 1px solid $grey-15;
+}
+
+.header-content {
+  @include flex(row, center, space-between);
+}
+
+.navbar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  ul {
+    @include flex-gap(15px);
+
+    li a {
+      @include font-style(
+        $absolute-white,
+        clamp(0.75rem, 0.194rem + 1.03vw, 1.125rem),
+        $f-medium,
+        150%
+      );
+
+      padding: 15px 25px;
+      @include border(1px solid transparent, 10px);
+      background-color: transparent;
+      transition: background-color 0.2s linear, border 0.2s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $grey-08;
+        border: 1px solid $grey-15;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+
+  .navbar-mobile-btn {
+    background-color: transparent;
+    border: none;
+  }
+}

@@ -1,0 +1,180 @@
+// FEATURED POST BLOCK
+.featured-properties {
+  margin-top: 120px;
+
+  @media screen and (max-width: 900px) {
+    margin-top: 80px;
+  }
+}
+
+.featured-properties-content {
+  position: relative;
+}
+
+// Property Selection Block
+.f-p-selection {
+  @include grid(repeat(3, 1fr), 1fr, 20px);
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Property Selection Object
+.selection-object {
+  @include flex-column(30px);
+  @include border(1px solid $grey-15, 12px);
+  background: $grey-08;
+  padding: 30px;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 900px) {
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+// Selection Block Image
+.s-o-img {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    @include symmetry(100%);
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 900px) {
+    max-height: 600px;
+  }
+
+  @media screen and (min-width: 901px) and (max-width: 1649px) {
+    height: clamp(9.688rem, -5.171rem + 26.39vw, 15.938rem);
+  }
+
+  @media screen and (min-width: 1650px) {
+    height: clamp(16.25rem, -6.667rem + 22.22vw, 20rem);
+  }
+}
+
+// Selection Block Info & Text
+.sel-info-block {
+  @include flex-column(20px);
+}
+
+.s-o-text {
+  @include flex-column(5px);
+
+  h3 {
+    @include font-style(
+      $absolute-white,
+      clamp(1.125rem, 1.038rem + 0.38vw, 1.5rem),
+      $f-medium,
+      150%
+    );
+  }
+
+  p {
+    @include font-style(
+      $grey-60,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+  }
+}
+
+// Building Place Name
+.f-p-place-name {
+  width: fit-content;
+  @include font-style(
+    $absolute-white,
+    clamp(0.75rem, 0.683rem + 0.37vw, 1.125rem),
+    $f-medium,
+    150%
+  );
+  @include border(1px solid $grey-15, 28px);
+  background: $grey-10;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s linear, border 0.2s linear;
+  &:hover {
+    background-color: $grey-15;
+    border: 1px solid $grey-15;
+  }
+}
+
+// Selection Block Wish Buttons
+.wish-block {
+  @include flex-gap(5px);
+  flex-wrap: wrap;
+
+  .wish-btn {
+    @include flex-gap(5px);
+    align-items: center;
+    @include font-style(
+      $absolute-white,
+      clamp(0.75rem, 0.683rem + 0.37vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+    @include border(1px solid $grey-15, 28px);
+    background: $grey-10;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, border 0.2s linear;
+
+    &:hover {
+      background-color: $grey-15;
+      border: 1px solid $grey-15;
+    }
+  }
+}
+
+// Property Price & Booking Button
+.price-block {
+  @include flex(row, center, space-between);
+  margin-top: auto;
+
+  @media screen and (min-width: 901px) and (max-width: 1300px) {
+    @include flex(column, baseline, unset, 20px);
+  }
+
+  .price {
+    @include flex-column(0);
+
+    span {
+      @include font-style(
+        $grey-60,
+        clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+        $f-medium,
+        150%
+      );
+    }
+
+    h3 {
+      @include font-style(
+        $absolute-white,
+        clamp(1.125rem, 1.038rem + 0.38vw, 1.5rem),
+        $f-semibold,
+        150%
+      );
+    }
+  }
+
+  button {
+    width: fit-content;
+
+    @media screen and (min-width: 901px) and (max-width: 1300px) {
+      width: 100%;
+    }
+  }
+}
+
+// Properties Page Details
+.properties-page-details {
+  @media screen and (max-width: 1440px) {
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,75 @@
+// JOIN US BLOCK
+.start-journey {
+  position: relative;
+  margin-top: 80px;
+  border-top: 1px solid $grey-15;
+  border-bottom: 1px solid $grey-15;
+  overflow: hidden;
+}
+
+// All Block Content
+.journey-content {
+  @include grid-auto-column(space-between, center, 150px);
+  padding: 60px 0;
+
+  @media screen and (max-width: 900px) {
+    gap: 30px;
+    grid-auto-flow: row;
+  }
+}
+
+// Block Text
+.journey-text {
+  @include flex-column(10px);
+
+  @media screen and (max-width: 900px) {
+    gap: 5px;
+  }
+
+  h1 {
+    @include font-style(
+      $absolute-white,
+      clamp(1.75rem, 1.462rem + 1.28vw, 3rem),
+      $f-semibold,
+      150%
+    );
+  }
+
+  p {
+    @include font-style(
+      $grey-60,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+  }
+}
+
+// Start Journey (Background)
+.journey-bg {
+  .j-bg-1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      transform: rotate(90deg);
+      left: -100px;
+      top: 0;
+    }
+  }
+  .j-bg-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @media screen and (max-width: 900px) {
+      @include w-h(398px, 217px);
+      right: -50px;
+      bottom: -50px;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+// Main Block
+.main-estatein {
+  position: relative;
+}
+
+.main-content {
+  @include grid(repeat(2, 1fr), $g-gap: 60px, $a-items: center);
+
+  @media screen and (max-width: 900px) {
+    @include grid-auto-row($g-gap: 60px);
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+  }
+}
+
+// Block Left Side
+.left-main-block {
+  padding: 100px 0;
+  @include grid-gap(50px);
+  @media screen and (max-width: 900px) {
+    padding: 0;
+    gap: 40px;
+  }
+}
+
+// Block Left Side -> Block Text
+.main-text-block {
+  @include flex-column(20px);
+  @media screen and (max-width: 600px) {
+    gap: 15px;
+  }
+  h1 {
+    @include font-style(
+      $absolute-white,
+      clamp(1.75rem, 1.397rem + 1.57vw, 3.75rem),
+      $f-semibold,
+      120%
+    );
+  }
+
+  p {
+    @include font-style(
+      $grey-60,
+      clamp(0.875rem, 0.819rem + 0.25vw, 1.125rem),
+      $f-medium,
+      150%
+    );
+  }
+}
+
+// Block Left Side -> Block Buttons
+.main-buttons-block {
+  @include flex-gap(15px);
+
+  @media screen and (max-width: 900px) {
+    @include flex-column(15px);
+    width: 100%;
+  }
+}
+
+// Block Left Side -> Block Short Information
+.short-info-block {
+  @include grid(repeat(3, 1fr), $g-gap: 20px);
+
+  @media screen and (max-width: 900px) {
+    @include grid(repeat(2, 1fr), $g-gap: 15px);
+    text-align: center;
+  }
+
+  .s-i-object {
+    padding: 15px 20px;
+    @include border(1px solid $grey-15, 15px);
+    background: $grey-10;
+
+    &:last-child {
+      @media screen and (max-width: 900px) {
+        grid-column: 1/3;
+      }
+    }
+
+    h4 {
+      @include font-style(
+        $absolute-white,
+        clamp(1.5rem, 1.167rem + 1.48vw, 2.5rem),
+        $f-bold,
+        150%
+      );
+    }
+    p {
+      @include font-style(
+        $grey-60,
+        clamp(0.875rem, 0.819rem + 0.25vw, 1.125rem),
+        $f-medium,
+        150%
+      );
+    }
+  }
+}
+
+// Block Right Side (Image)
+.right-main-block {
+  position: relative;
+  background: linear-gradient(238deg, #2a213f 8.76%, rgba(25, 25, 25, 0) 50.09%),
+    url("../img/main-bg.svg"), $grey-10 50% / cover no-repeat;
+  @include symmetry(100%);
+
+  @media screen and (max-width: 900px) {
+    @include border(1px solid $grey-15, 12px);
+    grid-row: 1/2;
+    max-height: 700px;
+  }
+
+  img {
+    @include symmetry(100%);
+    object-fit: cover;
+  }
+}
+
+// Block Right Side (Image) -> Arrow SVG
+.main-block-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 0;
+  transform: translateX(-50%);
+
+  @media screen and (max-width: 900px) {
+    top: auto;
+    bottom: 0;
+    left: -1px;
+    transform: translateY(40%);
+  }
+}

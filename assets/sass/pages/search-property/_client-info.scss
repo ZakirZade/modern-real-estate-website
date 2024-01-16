@@ -1,0 +1,143 @@
+// Client Info Block
+.client-info {
+  margin: 120px 0;
+
+  @media screen and (max-width: 1170px) {
+    margin: 80px 0;
+  }
+}
+
+.client-info-content {
+  position: relative;
+}
+
+// Client Information Input Block
+.client-info-input-block {
+  @include grid(repeat(4, 1fr), $g-gap: 30px);
+  @include border(1px solid $grey-15, 12px);
+  padding: 50px;
+
+  @media screen and (max-width: 1170px) {
+    padding: 20px;
+    @include grid-auto-row($g-gap: 20px);
+    grid-template-columns: 1fr;
+  }
+}
+
+// Input Field Title
+.info-input-title {
+  @include font-style(
+    $absolute-white,
+    clamp(1rem, 0.942rem + 0.31vw, 1.25rem),
+    $f-semibold,
+    150%
+  );
+  margin-bottom: 15px;
+}
+
+// Object
+.info-input-obj {
+  position: relative;
+  width: 100%;
+}
+
+// Input Field Style
+.info-input {
+  @include flex-center(15px);
+  @include border(1px solid $grey-15, 12px);
+  background-color: $grey-10;
+  padding: 15px 20px;
+
+  input {
+    width: 100%;
+    @include font-style(
+      $absolute-white,
+      clamp(0.875rem, 0.817rem + 0.31vw, 1.125rem),
+      $f-medium,
+      20px
+    );
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+
+  // List Open Button
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+// Select Budjet Block
+.budjet-input-block {
+  grid-column: 1/3;
+
+  @media screen and (max-width: 1170px) {
+    grid-column: unset;
+  }
+}
+
+// Contacts Block
+.contacts {
+  grid-column: 3/5;
+
+  @media screen and (max-width: 1170px) {
+    grid-column: unset;
+  }
+}
+
+.contacts-obj {
+  width: 100%;
+  @include grid(repeat(2, 1fr), $g-gap: 20px);
+
+  @media screen and (max-width: 1170px) {
+    grid-template-columns: 1fr;
+    @include grid-auto-row($g-gap: 15px);
+  }
+}
+
+// Text Area Block & Text Area Size Styles
+.info-textarea-block {
+  grid-column: 1/5;
+
+  @media screen and (max-width: 1170px) {
+    grid-column: unset;
+  }
+}
+
+.info-textarea {
+  @include font-style(
+    $absolute-white,
+    clamp(0.875rem, 0.817rem + 0.31vw, 1.125rem),
+    $f-medium,
+    150%
+  );
+  background-color: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  @include w-h(100%, 150px);
+}
+
+// Submit CheckBox Block In Page
+.submit-block {
+  position: relative;
+  grid-column: 1/5;
+  width: 100%;
+  @include grid-auto-column(space-between, center);
+
+  @media screen and (max-width: 1170px) {
+    @include grid-auto-row($g-gap: 25px);
+    grid-column: unset;
+  }
+}
+
+.submit-btn {
+  padding: 15px 30px;
+  font-weight: $f-medium;
+
+  @media screen and (max-width: 1170px) {
+    width: 100%;
+  }
+}

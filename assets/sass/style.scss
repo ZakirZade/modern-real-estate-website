@@ -1,0 +1,62 @@
+// Helpers
+@import "./helpers/all";
+
+// Base
+@import "./base/all";
+
+// Layout
+@import "./layout/all";
+
+// Components
+@import "./components/all";
+
+// Pages
+@import "./pages/all";
+
+body {
+  font-family: $font-main;
+  font-weight: $f-regular;
+  font-size: 16px;
+  background-color: $grey-08;
+}
+
+// Container
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 400px) {
+    width: 90%;
+    max-width: 360px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1170px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1280px;
+  }
+
+  @media screen and (min-width: 1650px) {
+    max-width: 1600px;
+  }
+}
+
+.mobile-none {
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.mobile-none-xxl {
+  @media screen and (max-width: 1440px) {
+    display: none;
+  }
+}
+
+.pc-none {
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+}

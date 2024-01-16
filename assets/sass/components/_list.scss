@@ -1,0 +1,74 @@
+// Block List
+.list {
+  padding-top: 20px;
+  @include flex(row, start, space-between);
+  border-top: 1px solid $grey-15;
+}
+
+// List Numbers
+.list-no {
+  @include font-style(
+    $grey-60,
+    clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem),
+    $f-medium,
+    150%
+  );
+
+  .active-list {
+    @include font-style(
+      $absolute-white,
+      clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem),
+      $f-medium,
+      150%
+    );
+  }
+}
+
+// Block List Buttons
+.list-btns {
+  @include flex-gap(10px);
+
+  @media screen and (max-width: 900px) {
+    align-items: center;
+  }
+}
+
+.l-btn-obj {
+  cursor: pointer;
+  @include flex-center;
+  @include symmetry(45px);
+  @include border(1px solid $grey-15, 50%);
+  background-color: transparent;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: $grey-10;
+  }
+
+  svg {
+    width: 25px;
+  }
+
+  svg path {
+    transition: fill 0.2s linear;
+  }
+
+  &:hover svg path {
+    fill: $absolute-white;
+  }
+}
+
+// Mobile List Style
+.mobile-list {
+  @include flex(row, center, space-between);
+  padding-top: 20px;
+  border-top: 1px solid $grey-15;
+}
+
+// Properties Page List
+.properties-list {
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

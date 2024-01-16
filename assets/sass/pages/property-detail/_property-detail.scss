@@ -1,0 +1,205 @@
+// PROPERTY DETAIL BLOCK
+.property-detail {
+  margin-top: 80px;
+
+  @media screen and (max-width: 900px) {
+    margin-top: 60px;
+  }
+}
+
+// Property Detail Title
+.detail-title {
+  @include flex(row, center, flex-start, 20px);
+
+  @media screen and (max-width: 900px) {
+    @include flex(column, baseline, flex-start, 10px);
+  }
+
+  // Property Name
+  .property-name {
+    text-wrap: nowrap;
+
+    h1 {
+      @include font-style(
+        $absolute-white,
+        clamp(1.25rem, 1.075rem + 0.8vw, 1.875rem),
+        $f-semibold,
+        150%
+      );
+    }
+  }
+}
+
+.property-info {
+  width: 100%;
+  height: fit-content;
+  @include flex(row, center, space-between);
+
+  @media screen and (max-width: 900px) {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  // Geological Tag
+  .geotag {
+    @include flex-center(5px);
+    @include border(1px solid $grey-15, 6px);
+    width: fit-content;
+    padding: 10px;
+    background-color: $grey-08;
+    transition: background-color 0.1s linear;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $grey-15;
+    }
+
+    span {
+      @include font-style(
+        $absolute-white,
+        clamp(0.875rem, 0.805rem + 0.32vw, 1.125rem),
+        500,
+        150%
+      );
+    }
+  }
+
+  // Property Price
+  .property-price {
+    @include flex-column;
+
+    @media screen and (max-width: 900px) {
+      @include flex(row, baseline, unset, 5px);
+    }
+
+    span {
+      @include font-style(
+        $grey-60,
+        clamp(0.875rem, 0.805rem + 0.32vw, 1.125rem),
+        500,
+        150%
+      );
+    }
+
+    .property-price {
+      @include font-style(
+        $absolute-white,
+        clamp(1.125rem, 1.02rem + 0.48vw, 1.5rem),
+        $f-semibold,
+        150%
+      );
+    }
+  }
+}
+
+// Property Detail Photos Block
+.detail-photo {
+  width: 100%;
+  @include grid-auto-row(center, center, $g-gap: 20px);
+  @include border(1px solid $grey-15, 12px);
+  background-color: $grey-10;
+  padding: 40px;
+  margin-top: 40px;
+  justify-items: center;
+
+  @media screen and (max-width: 900px) {
+    margin-top: 20px;
+    padding: 20px;
+  }
+}
+
+// Property Detail Photos Slider
+.photo-slider {
+  width: 100%;
+  @include grid(repeat(9, 1fr), 1fr, $g-gap: 10px);
+  @include border(1px solid $grey-15, 12px);
+  background-color: $grey-08;
+  padding: 10px;
+
+  @media screen and (max-width: 900px) {
+    grid-row: 2/3;
+    @include grid(repeat(4, 1fr), 1fr, $g-gap: 10px);
+  }
+
+  .photo-slider-obj {
+    position: relative;
+    @include symmetry(100%);
+    height: clamp(4.063rem, 3.538rem + 2.4vw, 5.938rem);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include symmetry(100%);
+      background-color: #0a0a0a80;
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
+
+    &:hover::before {
+      opacity: 0;
+    }
+
+    &:first-child::before {
+      opacity: 0;
+    }
+
+    img {
+      @include symmetry(100%);
+      object-fit: cover;
+    }
+  }
+}
+
+// Main Photos View Block
+.detail-main-photo {
+  @include grid(repeat(2, 1fr), 1fr, $g-gap: 30px);
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-main-photo-obj {
+    @include symmetry(100%);
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      @include symmetry(100%);
+      object-fit: cover;
+    }
+  }
+}
+
+// List Switch Block
+.switch-photo-btns {
+  @include flex-center(10px);
+  width: fit-content;
+  background-color: $grey-08;
+  border-radius: 100px;
+  padding: 10px;
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  // List Numnber Detail (6 photos)
+  .detail-page-num {
+    @include flex-gap(5px);
+  }
+
+  .detail-page-num-obj {
+    @include w-h(12px, 3px);
+    border-radius: 60px;
+    background-color: $grey-30;
+
+    &:first-child {
+      background-color: $purple-60;
+    }
+  }
+}

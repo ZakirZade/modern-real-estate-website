@@ -1,0 +1,14 @@
+// Logo Style
+.logo {
+  width: clamp(5.938rem, 5.938rem + 3.39vw, 10rem);
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}

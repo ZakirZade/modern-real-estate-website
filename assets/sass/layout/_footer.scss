@@ -1,0 +1,190 @@
+// FOOTER BLOCK
+.footer-content {
+  padding: 80px 0;
+  @include grid-auto-column($g-gap: 80px);
+
+  @media screen and (max-width: 900px) {
+    @include grid-auto-row($g-gap: 30px);
+  }
+}
+
+// Logo & E-Mail Input Block
+.email-send {
+  @include flex-column(25px);
+}
+
+// Logo & E-Mail Input Block -> Input
+.email-input {
+  padding: 15px 20px;
+  @include flex(row, center, unset, 5px);
+  @include border(1px solid $grey-15, 8px);
+  background-color: $grey-08;
+  width: fit-content;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
+
+  input {
+    width: 210px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @include font-style(
+      $absolute-white,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      24px
+    );
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+// Footer Navigation Links
+.footer-links {
+  width: 100%;
+  max-width: 1000px;
+  @include grid-auto-column(space-between);
+
+  @media screen and (max-width: 900px) {
+    @include grid(repeat(2, 1fr), auto, 40px);
+    grid-auto-flow: unset;
+  }
+}
+
+// Footer Navigation Links -> Navigation Links Column
+.f-links-block {
+  @include flex-column(25px);
+
+  @media screen and (max-width: 900px) {
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid $grey-15;
+  }
+
+  // Title For Nav Column
+  .links-title {
+    @include font-style(
+      $grey-60,
+      clamp(1rem, 0.942rem + 0.26vw, 1.25rem),
+      $f-medium,
+      24px
+    );
+  }
+
+  .f-links ul {
+    @include flex-column(15px);
+
+    @media screen and (max-width: 900px) {
+      gap: 5px;
+    }
+  }
+
+  // Links
+  .f-links ul li a {
+    @include font-style(
+      $absolute-white,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      24px
+    );
+    transition: color 0.2s linear;
+
+    &:hover {
+      color: $grey-60;
+    }
+  }
+}
+
+// Terms & Conditions
+.terms-conditions {
+  background-color: $grey-10;
+}
+
+// Terms & Conditions -> All Block Contents
+.terms-conditions-content {
+  width: 100%;
+  @include grid-auto-column(space-between, center);
+  padding: 15px 0;
+
+  @media screen and (max-width: 900px) {
+    @include grid-auto-row(center, center, 20px);
+  }
+}
+
+// Terms & Conditions -> Terms & Conditions Text
+.terms-text-block {
+  @include flex-gap(20px);
+
+  @media screen and (max-width: 900px) {
+    @include flex-column(10px);
+    text-align: center;
+  }
+
+  span {
+    @include font-style(
+      $absolute-white,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      24px
+    );
+  }
+
+  a {
+    @include font-style(
+      $absolute-white,
+      clamp(0.875rem, 0.817rem + 0.26vw, 1.125rem),
+      $f-medium,
+      24px
+    );
+    transition: color 0.2s linear;
+
+    &:hover {
+      color: $grey-60;
+    }
+  }
+}
+
+// Terms & Conditions -> Social Media Icons & Links
+.site-social-block {
+  @include flex-gap(10px);
+
+  @media screen and (max-width: 900px) {
+    grid-row: 1/2;
+    justify-content: center;
+  }
+
+  .social-obj {
+    @include symmetry(40px);
+    border-radius: 50%;
+    background-color: $grey-08;
+    @include flex-center;
+    transition: background-color 0.2s linear;
+
+    @media screen and (max-width: 900px) {
+      @include symmetry(60px);
+    }
+
+    &:hover {
+      background-color: $grey-15;
+    }
+
+    svg {
+      @include symmetry(50%);
+      object-fit: cover;
+
+      @media screen and (max-width: 900px) {
+        @include symmetry(20px);
+      }
+    }
+  }
+}
