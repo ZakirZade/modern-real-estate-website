@@ -1,2 +1,2 @@
-My first relatively large project
+My first relatively large project.
 Hello World!)
